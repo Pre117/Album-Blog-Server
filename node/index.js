@@ -5,9 +5,7 @@ const checkToken = require('./middlewares/checkToken')
 const userRoute = require('./routes/user')
 const blogRoute = require('./routes/blog')
 
-const app = new Koa({
-    keys: ['KGJ6NLxqOkYCNr1h']
-})
+const app = new Koa()
 
 
 //中间件
