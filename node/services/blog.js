@@ -29,23 +29,6 @@ exports.showAll = async function() {
     return Blog.findAll()
 }
 
-//查询所有文章列表
-// exports.list = async function (page = 1, size = 10) {
-
-//     console.log(blog)
-//     return Blog.findAndCountAll({
-//         limit: size,
-//         offset: (page - 1) * size,
-//         order: [
-//             ['id', 'DESC']
-//         ],
-//         include: [{
-//             model: User,
-//             attributes: ['id', 'nickname'],
-//             as: 'user'
-//         }]
-//     })
-// }
 
 //用户发表的文章列表
 exports.listByUser = async function (userId, page = 1, size = 10) {

@@ -1,5 +1,5 @@
 const Koa = require('koa')
-const cors = require('koa2-cors')
+// const cors = require('koa2-cors')
 const bodyParser = require('koa-bodyparser')
 const checkToken = require('./middlewares/checkToken')
 const userRoute = require('./routes/user')
@@ -13,16 +13,16 @@ app.use(bodyParser()) // 获取前端发送post请求传过来的数据ctx.reque
 
 app.use(checkToken) // 验证token是否过期
 // 后端跨域（前端已设置，所以这里注释掉）
-app.use(cors({
-    origin: function (ctx) {
-        return 'http://localhost:1818'
-    },
-    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
-    maxAge: 1000,
-    credentials: true,
-    allowMethods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization', 'Accept']
-}))
+// app.use(cors({
+//     origin: function (ctx) {
+//         return 'http://localhost:1818'
+//     },
+//     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+//     maxAge: 1000,
+//     credentials: true,
+//     allowMethods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+//     allowHeaders: ['Content-Type', 'Authorization', 'Accept']
+// }))
 
 //路由
 app.use(userRoute.routes()).use(userRoute.allowedMethods())

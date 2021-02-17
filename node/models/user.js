@@ -1,13 +1,9 @@
 const {
     Model
 } = require('sequelize')
-// const security = require('../config/security')
 
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
-        // checkPassword(rawPassword) {
-        //     return security.sha256(rawPassword) === this.password
-        // }
     }
 
     User.init({

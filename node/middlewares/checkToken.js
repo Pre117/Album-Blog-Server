@@ -9,7 +9,6 @@ async function checkToken(ctx, next) {
         await next()
     }else {
         let token = ctx.request.headers.token
-        // console.log(token)
 
         if (token) {
             const tokenItem = jwt.verify(token, secret.secret) 
